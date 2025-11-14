@@ -1,5 +1,6 @@
 import Navbar from './components/Navbar';
 import CommentsSection from './components/CommentsSection';
+import ZoomableImage from './components/ZoomableImage';
 
 const pageStyles: React.CSSProperties = {
   backgroundColor: '#808080',
@@ -33,26 +34,15 @@ const imageContainerStyles = {
   minWidth: 0
 };
 
-const frameStyles = {
+const frameStyles: React.CSSProperties = {
   border: '8px solid white',
   boxShadow: '0 0 15px rgba(0,0,0,0.2)',
   backgroundColor: 'white',
   borderRadius: '8px',
   overflow: 'hidden',
-  height: '100%',
-  display: 'flex',
-  alignItems: 'center',
-  justifyContent: 'center',
-  padding: '1rem'
-};
-
-const imageStyles = {
-  display: 'block',
-  maxWidth: '100%',
-  maxHeight: '75vh',
-  width: 'auto',
-  height: 'auto',
-  objectFit: 'contain' as const
+  height: '80vh',
+  position: 'relative',
+  width: '100%'
 };
 
 const commentsContainerStyles = {
@@ -73,10 +63,9 @@ export default function Home() {
           <div style={containerStyles}>
             <div style={imageContainerStyles}>
               <div style={frameStyles}>
-                <img 
-                  src="/image.png" 
-                  alt="" 
-                  style={imageStyles} 
+                <ZoomableImage 
+                  src="/image.png"
+                  alt="Imagen de la prenda"
                 />
               </div>
             </div>
